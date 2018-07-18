@@ -288,7 +288,9 @@ with tf.Session() as sess:
   -0.00259693 -0.0659536   0.16362615 -0.11058624 -0.23266786  0.07123026
    0.08790443 -0.13033037 -0.12809968 -0.06643552  0.03927997  0.19020995
    0.26122165 -0.1893848  -0.09913436 -0.09246968  0.08428465 -0.01915
-  -0.01001874  0.0972615 ]]```
+  -0.01001874  0.0972615 ]]
+```
+
 
 You can also re-train them by just setting the `trainable` parameter of the `hub.Module` constructor to `True`. This is useful when you have a spefic domain text corpus and you want your embeddings to specialize on that. `hub.Module("https://tfhub.dev/google/Wiki-words-250-with-normalization/1", trainable=True)`
 
