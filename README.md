@@ -242,9 +242,11 @@ with tf.Session() as sess:
 
 ## Pretrain Embed
 
-You can benefit by using pre-trained word embedding. You can also train them by yourself using large text dataset, e.g. Wikipedia, with bag-of-words of skip-grammar. There are several ones, the most famous are (word2vec)[https://arxiv.org/abs/1301.3781] and (Glove)[https://nlp.stanford.edu/pubs/glove.pdf].
+You can benefit by using pre-trained words embedding since they can improve performance of your model. They are usually trained with enormous datasets, e.g. Wikipedia, with bag-of-words of skip-grammar models.
 
-You can read more about training word embedding from scratch from the (tensorflow tutorial)[https://www.tensorflow.org/tutorials/representation/word2vec] and this nice (article)[https://towardsdatascience.com/learn-word2vec-by-implementing-it-in-tensorflow-45641adaf2ac]
+There are several of already trained embeddings, the most famous are (word2vec)[https://arxiv.org/abs/1301.3781] and (Glove)[https://nlp.stanford.edu/pubs/glove.pdf].
+
+You can read more about training words embedding and how to train them from scratch in this (tensorflow tutorial)[https://www.tensorflow.org/tutorials/representation/word2vec] and this nice (article)[https://towardsdatascience.com/learn-word2vec-by-implementing-it-in-tensorflow-45641adaf2ac]
 
 In the past, load into TensorFlow pre-trained word-embedding was not so easy. You had to download the matrix from somewhere and load into your program and maybe store it again. Now, we can use **TensorFlow Hub**. 
 
@@ -288,9 +290,7 @@ with tf.Session() as sess:
   -0.00259693 -0.0659536   0.16362615 -0.11058624 -0.23266786  0.07123026
    0.08790443 -0.13033037 -0.12809968 -0.06643552  0.03927997  0.19020995
    0.26122165 -0.1893848  -0.09913436 -0.09246968  0.08428465 -0.01915
-  -0.01001874  0.0972615 ]]
-```
-
+  -0.01001874  0.0972615 ]]```
 
 You can also re-train them by just setting the `trainable` parameter of the `hub.Module` constructor to `True`. This is useful when you have a spefic domain text corpus and you want your embeddings to specialize on that. `hub.Module("https://tfhub.dev/google/Wiki-words-250-with-normalization/1", trainable=True)`
 
